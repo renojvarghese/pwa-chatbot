@@ -45,5 +45,6 @@ self.addEventListener('activate', function(e) {
       }));
     })
     );
+    getAllMessagesFromFirebase(messagelog)
     return self.clients.claim();
 });

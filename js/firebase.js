@@ -10,3 +10,23 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 let db = firebase.firestore();
+
+
+
+function saveMessageToFirebase(msg) {
+    db.collection("messages").add(msg)
+}
+
+function getAllMessagesFromFirebase(target) {
+    db.collection("messages").orderBy('time', 'asc').limit(200).get().then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            doc = doc.data()
+            console.log(doc)
+            let textHolder = $("<div></div>");
+            textHolder.attr("class", "text-bubble " + doc.sender)
+            textHolder.html(doc.message);
+            target.prepend(textHolder);
+        });
+    });
+}
+

@@ -23,8 +23,15 @@ sendbtn.on("click", function() {
     inputbox.val("");
     if (text) {
         sendUserMessage(text);
+        saveMessageToFirebase({
+            message: text,
+            sender: "user",
+            time: Date.now()
+        })
     }
+
 })
+
 // Posting Pictures
 const picInput = $("#pic-input");
 
@@ -50,3 +57,11 @@ function postBotMessage(msg) {
     textHolder.html(msg);
     messagelog.append(textHolder);
 }
+
+
+//- Initializing App
+function init() {
+    window.navigator.vibrate(200);
+    getAllMessagesFromFirebase(messagelog);
+}
+init();
