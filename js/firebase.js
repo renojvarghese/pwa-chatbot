@@ -25,7 +25,7 @@ function getAllMessagesFromFirebase(target) {
             let textHolder = $("<div></div>");
             textHolder.attr("class", "text-bubble " + doc.sender)
             textHolder.html(doc.message);
-            target.prepend(textHolder);
+            target.append(textHolder);
         });
     });
 }

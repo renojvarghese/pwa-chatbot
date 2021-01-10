@@ -55,7 +55,7 @@ function postBotMessage(msg) {
     let textHolder = $("<div></div>");
     textHolder.attr("class", "text-bubble bot")
     textHolder.html(msg);
-    messagelog.prepend(textHolder);
+    messagelog.append(textHolder);
 }
 
 
