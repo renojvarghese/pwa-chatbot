@@ -61,7 +61,7 @@ function postBotMessage(msg) {
 
 //- Initializing App
 function init() {
-    window.navigator.vibrate(200);
+    // window.navigator.vibrate(200);
     getAllMessagesFromFirebase(messagelog);
 }
 init();
