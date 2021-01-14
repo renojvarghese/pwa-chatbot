@@ -28,9 +28,8 @@ sendbtn.on("click", function() {
             sender: "user",
             time: Date.now()
         });
-        if (window && window.navigator) {
-            window.navigator.vibrate(200);
-        }
+        window.navigator.vibrate(200);
+
     }
 
 })
