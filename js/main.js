@@ -27,7 +27,10 @@ sendbtn.on("click", function() {
             message: text,
             sender: "user",
             time: Date.now()
-        })
+        });
+        if (window && window.navigator) {
+            window.navigator.vibrate(200);
+        }
     }
 
 })
@@ -46,6 +49,7 @@ picInput.change(function() {
 
         reader.readAsDataURL(picInput.files[0]);
     }
+    
 });
 
 
