@@ -29,7 +29,6 @@ sendbtn.on("click", function() {
             time: Date.now()
         });
         window.navigator.vibrate(200);
-
     }
 
 })
