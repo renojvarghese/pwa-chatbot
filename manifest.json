@@ -6,6 +6,7 @@
   "orientation": "portrait",
   "background_color": "#fff",
   "theme_color": "#000",
+  "prefer_related_applications": true,
   "icons": [
     {
       "src": "/assets/icons/icon-192.png",
